@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignInPageFragment">
+
+    <TextView
+        android:id="@+id/welcomeTitleTextView"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="113dp"
+        android:fontFamily="@font/montserrat_alternates_bold"
+        android:gravity="center"
+        android:text="@string/sing_in"
+        android:textColor="@color/myBlack"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/singInFirstNameEditText"
+        android:layout_width="289dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="42dp"
+        android:background="@drawable/edit_text_background"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:hint="@string/first_name"
+        android:textColorHint="#7B7B7B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeTitleTextView"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/singInLastNameEditText"
+        android:layout_width="289dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="42dp"
+        android:background="@drawable/edit_text_background"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:hint="@string/last_name"
+        android:textColorHint="#7B7B7B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singInFirstNameEditText" />
+
+    <EditText
+        android:id="@+id/singInEmailEditText"
+        android:layout_width="289dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="42dp"
+        android:background="@drawable/edit_text_background"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:hint="@string/email"
+        android:textColorHint="#7B7B7B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singInLastNameEditText"
+        android:singleLine="true"/>
+
+    <Button
+        android:id="@+id/singInButton"
+        android:layout_width="289dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="43dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/sing_in"
+        android:textColor="#EAEAEA"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/singInEmailEditText"
+        />
+
+    <TextView
+        android:id="@+id/singInTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/already_have_an_account"
+        android:textColor="#808080"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singInButton" />
+
+    <TextView
+        android:id="@+id/singInLoginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/log_in"
+        android:textColor="#254FE6"
+        app:layout_constraintStart_toEndOf="@id/singInTextView"
+        app:layout_constraintTop_toBottomOf="@id/singInButton" />
+
+    <ImageView
+        android:id="@+id/singInGoogleIconImageView"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/google_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singInTextView" />
+
+    <TextView
+        android:id="@+id/singInGoogleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/sing_in_with_google"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/singInGoogleIconImageView"
+        app:layout_constraintTop_toBottomOf="@id/singInTextView" />
+
+    <ImageView
+        android:id="@+id/singInAppleIconImageView"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/apple_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singInGoogleIconImageView" />
+
+    <TextView
+        android:id="@+id/singInAppleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/sing_in_with_apple"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/singInAppleIconImageView"
+        app:layout_constraintTop_toBottomOf="@id/singInGoogleTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
