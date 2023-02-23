@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OnlineShop</string>
+    <string name="sing_in">Sing in</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="sing_in_button">Sing In</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="log_in">Log in</string>
+    <string name="sing_in_with_google">Sign in with Google</string>
+    <string name="sing_in_with_apple">Sign in with Apple</string>
+</resources>
