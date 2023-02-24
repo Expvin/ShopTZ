@@ -34,7 +34,8 @@ class SignInPageFragment : Fragment() {
 
 
     fun String.isEmailValid(): Boolean {
-        return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
+        return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this)
+            .matches()
     }
 
     private fun singInUser() {
@@ -49,7 +50,6 @@ class SignInPageFragment : Fragment() {
 
 
     private fun loginSetOnClickListener() {
-
         binding.singInLoginTextView.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.mainFragmentContainerView, LoginFragment.getInstance())

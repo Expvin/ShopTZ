@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/singInBackground"
     tools:context=".presentation.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -14,8 +13,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/profileBottomNavigationView"
+        android:name="com.expv1n.onlineshop.presentation.ProfileFragment"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/profileBottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:name="com.expv1n.onlineshop.presentation.SignInPageFragment"/>
+        app:menu="@menu/bottom_menu_navigation" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.ProfileFragment">
+
+    <ImageButton
+        android:id="@+id/profileBackImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/profileTitleTextView"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:text="@string/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/montserrat"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#3F3F3F"
+        android:layout_marginTop="5dp"/>
+
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/profile_imagepgn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileTitleTextView"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/profileChangeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_photo"
+        android:fontFamily="@font/montserrat"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImageView"
+        android:textColor="#3F3F3F"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/profileNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/satria_adhi_pradana"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileChangeText"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="bold"
+        android:textColor="#3F3F3F"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/profileUploadItemImageButton"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileNameTextView"
+        android:layout_marginTop="15dp"
+        android:text="@string/upload_item"
+        android:icon="@drawable/upload"/>
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/profileUploadItemImageButton">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_weight = "4">
+           <FrameLayout
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               >
+
+               <ImageView
+                   android:id="@+id/elipse"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ellipse" />
+
+               <ImageView
+                   android:id="@+id/credit_card"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:src="@drawable/credit_card" />
+           </FrameLayout>
+
+           <TextView
+               android:id="@+id/profileTradeStoreTextView"
+               android:text="@string/trade_store"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="14sp"
+               android:fontFamily="@font/montserrat"
+               android:textColor="#040402"
+               android:layout_gravity="center_vertical"
+               android:layout_marginStart="10dp"/>
+       </LinearLayout>
+
+        <ImageView
+            android:id="@+id/moreDetailedImageViewTD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/more_details"
+            android:layout_gravity="center_vertical"
+            android:layout_weight = "1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ll1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight = "4">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/elipse2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ellipse" />
+
+                <ImageView
+                    android:id="@+id/credit_card2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/credit_card" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profilePaymentMethodTextView"
+                android:text="@string/payment_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#040402"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/moreDetailedImageViewPM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/more_details"
+            android:layout_gravity="center_vertical"
+            android:layout_weight = "1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ll2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight = "4">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/elipse3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ellipse" />
+
+                <ImageView
+                    android:id="@+id/credit_card3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/credit_card" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profileBalanceTextView"
+                android:text="@string/payment_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#040402"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/profileBalanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1593"
+            android:textColor="#040402"
+            android:textSize="14sp"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_weight = "1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ll3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight = "4">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/elipse4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ellipse" />
+
+                <ImageView
+                    android:id="@+id/credit_card4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/credit_card" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profileTradeHistoryTextView"
+                android:text="@string/trade_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#040402"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/moreDetailedImageViewTH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/more_details"
+            android:layout_gravity="center_vertical"
+            android:layout_weight = "1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ll4">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight = "4">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/elipse5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ellipse" />
+
+                <ImageView
+                    android:id="@+id/credit_card5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/reset" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profileRestorePurchaseTextView"
+                android:text="@string/restore_urchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#040402"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/moreDetailedImageViewRP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/more_details"
+            android:layout_gravity="center_vertical"
+            android:layout_weight = "1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ll5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight = "6">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/elipse6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ellipse" />
+
+                <ImageView
+                    android:id="@+id/credit_card6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/help" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profileHelpTextView"
+                android:text="@string/help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#040402"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/moreDetailedImageViewH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/more_details"
+            android:layout_gravity="center_vertical"
+            android:layout_weight = "1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ll6">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight = "4">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                >
+
+                <ImageView
+                    android:id="@+id/elipse7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ellipse" />
+
+                <ImageView
+                    android:id="@+id/credit_card7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/log_in" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profileLogOutTextView"
+                android:text="@string/log_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#040402"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
