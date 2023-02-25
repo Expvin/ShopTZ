@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="114dp"
+    android:layout_height="149dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="9dp"
+    android:elevation="6dp">
+
+    <ImageView
+        android:id="@+id/itemLatestImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@drawable/latest_tools_image"
+        android:scaleType="centerCrop"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:layout_marginStart="14dp">
+
+        <ImageView
+            android:id="@+id/rectangles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle" />
+
+        <TextView
+            android:id="@+id/itemRectanglesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/phones"
+            android:textSize="6sp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="#070604"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginStart="89dp"
+        >
+
+        <ImageView
+            android:id="@+id/elipse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ellipse" />
+
+        <ImageView
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/plus" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/itemNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Samsung S10"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/white"
+        android:layout_marginStart="5dp"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:layout_marginTop="106dp"/>
+
+    <TextView
+        android:id="@+id/itemPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="$ 180,000"
+        android:fontFamily="@font/poppins_light"
+        android:textColor="@color/white"
+        android:layout_marginStart="5dp"
+        android:textStyle="bold"
+        android:textSize="7sp"
+        android:layout_marginTop="133dp"/>
+
+
+</androidx.cardview.widget.CardView>
