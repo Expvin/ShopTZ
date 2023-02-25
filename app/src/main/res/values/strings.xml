@@ -35,4 +35,8 @@
     <string name="furniture">Furniture</string>
     <string name="kids">kids</string>
     <string name="what_are_you_looking_for">What are you looking for ?</string>
+    <string name="latest">Latest</string>
+    <string name="view_all">View all</string>
+    <string name="flash_sale">Flash Sale</string>
+    <string name="brands">Brands</string>
 </resources>
