@@ -28,4 +28,11 @@
     <string name="trade_by">Trade by</string>
     <string name="bata">bata</string>
     <string name="location">Location</string>
+    <string name="phones">Phones</string>
+    <string name="headphones">Headphones</string>
+    <string name="Games">Games</string>
+    <string name="cars">Cars</string>
+    <string name="furniture">Furniture</string>
+    <string name="kids">kids</string>
+    <string name="what_are_you_looking_for">What are you looking for ?</string>
 </resources>

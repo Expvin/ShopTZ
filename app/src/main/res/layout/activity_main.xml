@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/profileBottomNavigationView"
-        android:name="com.expv1n.onlineshop.presentation.ProfileFragment"/>
+        android:name="com.expv1n.onlineshop.presentation.Page1Fragment"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/profileBottomNavigationView"
