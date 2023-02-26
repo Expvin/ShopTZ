@@ -22,8 +22,6 @@ class SignInPageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSignInPageBinding.inflate(inflater, container, false)
-        loginSetOnClickListener()
-        singInUser()
         return binding.root
     }
 
@@ -33,29 +31,5 @@ class SignInPageFragment : Fragment() {
     }
 
 
-    fun String.isEmailValid(): Boolean {
-        return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this)
-            .matches()
-    }
-
-    private fun singInUser() {
-        binding.singInButton.setOnClickListener {
-            if (binding.singInEmailEditText.text.toString().isEmailValid()) {
-                Toast.makeText(requireActivity(), "OKey", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireActivity(), "Not valied email", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-
-    private fun loginSetOnClickListener() {
-        binding.singInLoginTextView.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.mainFragmentContainerView, LoginFragment.getInstance())
-                .addToBackStack(LoginFragment.NAME)
-                .commit()
-        }
-    }
 
 }
