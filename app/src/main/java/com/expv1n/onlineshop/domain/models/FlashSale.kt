@@ -1,4 +1,4 @@
-package com.expv1n.onlineshop.data.models
+package com.expv1n.onlineshop.domain.models
 
 data class FlashSale(
     val category: String,

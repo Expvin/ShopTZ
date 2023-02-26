@@ -1,7 +1,7 @@
 package com.expv1n.onlineshop.data.newtwork
 
-import com.expv1n.onlineshop.data.models.FlashSale
-import com.expv1n.onlineshop.data.models.Latest
+import com.expv1n.onlineshop.domain.models.FlashSale
+import com.expv1n.onlineshop.domain.models.Latest
 import retrofit2.http.GET
 
 interface ApiService {
