@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.expv1n.onlineshop.data.RepositoryImpl
 import com.expv1n.onlineshop.domain.models.User
 import com.expv1n.onlineshop.domain.usecases.AddUserUseCase
-import com.expv1n.onlineshop.domain.usecases.getPresenceOfUserByEmailUseCase
+import com.expv1n.onlineshop.domain.usecases.GetPresenceOfUserByEmailUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -16,7 +16,7 @@ class SingInPageFragmentViewModel(application: Application): AndroidViewModel(ap
 
     private val repository = RepositoryImpl(application)
     private val addUser = AddUserUseCase(repository)
-    private val checkUser = getPresenceOfUserByEmailUseCase(repository)
+    private val checkUser = GetPresenceOfUserByEmailUseCase(repository)
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
     private val _checkUserLiveData = MutableLiveData<Boolean>()

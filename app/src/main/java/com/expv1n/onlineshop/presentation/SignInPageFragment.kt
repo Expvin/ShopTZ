@@ -88,7 +88,6 @@ class SignInPageFragment : Fragment() {
     private fun launchFragment(fragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.mainFragmentContainerView, fragment)
-            .addToBackStack(LoginFragment.NAME)
             .commit()
     }
 

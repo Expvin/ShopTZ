@@ -38,7 +38,7 @@ class RepositoryImpl(application: Application): Repository {
     }
 
     override suspend fun getPresenceOfUserByFirstName(firstName: String): Boolean {
-        if (databaseDao.existsEmail(firstName)) {
+        if (databaseDao.existsName(firstName)) {
             Log.d("Repository", "return true")
             return true
         }
