@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [UserEntity::class], version = 1, exportSchema = true)
+@Database(entities = [UserEntity::class], version = 4, exportSchema = true)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun getUserDao(): UserDao
@@ -14,7 +14,7 @@ abstract class AppDatabase: RoomDatabase() {
 
         private var INSTANCE: AppDatabase? = null
         private val LOCK = Any()
-        private const val DB_NAME = "user_database.db"
+        private const val DB_NAME = "user_databaset1.db"
 
         fun getInstance(application: Application): AppDatabase {
 

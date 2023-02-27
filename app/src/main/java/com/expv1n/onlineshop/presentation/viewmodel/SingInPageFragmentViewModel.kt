@@ -4,43 +4,41 @@ import android.app.Application
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.expv1n.onlineshop.R
 import com.expv1n.onlineshop.data.RepositoryImpl
+import com.expv1n.onlineshop.domain.models.User
 import com.expv1n.onlineshop.domain.usecases.AddUserUseCase
 import com.expv1n.onlineshop.domain.usecases.GetUserUseCase
 import com.expv1n.onlineshop.presentation.LoginFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 class SingInPageFragmentViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository = RepositoryImpl(application)
-    val addUser = AddUserUseCase(repository)
-    val checkUser = GetUserUseCase(repository)
+    private val addUser = AddUserUseCase(repository)
+    private val checkUser = GetUserUseCase(repository)
+    private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
+    private val _checkUserLiveData = MutableLiveData<Boolean>()
+    val checkUserLiveData: LiveData<Boolean>
+        get() = _checkUserLiveData
 
-
-    fun String.isEmailValid(): Boolean {
-        return !TextUtils.isEmpty(this) && android.util.Patterns.EMAIL_ADDRESS.matcher(this)
-            .matches()
-    }
-
-    private fun singInUser() {
-        binding.singInButton.setOnClickListener {
-            if (binding.singInEmailEditText.text.toString().isEmailValid()) {
-                Toast.makeText(requireActivity(), "OKey", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(requireActivity(), "Not valied email", Toast.LENGTH_SHORT).show()
-            }
+    suspend fun availabilityCheckUser(email: String) {
+        coroutineScope.launch {
+            _checkUserLiveData.postValue(checkUser.getUser(email))
         }
     }
 
-
-    private fun loginSetOnClickListener() {
-        binding.singInLoginTextView.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.mainFragmentContainerView, LoginFragment.getInstance())
-                .addToBackStack(LoginFragment.NAME)
-                .commit()
-        }
+    suspend fun createUser(user: User) {
+        addUser.addUser(user)
     }
+
+
 
 }

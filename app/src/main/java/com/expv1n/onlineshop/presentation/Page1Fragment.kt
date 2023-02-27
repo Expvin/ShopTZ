@@ -26,4 +26,11 @@ class Page1Fragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
+    companion object {
+
+        fun getInstance() = Page1Fragment()
+
+    }
+
 }
