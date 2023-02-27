@@ -63,10 +63,7 @@ class SignInPageFragment : Fragment() {
                                 email = binding.singInEmailEditText.text.toString(),
                                 password = "1234"))
                         }
-                        requireActivity().supportFragmentManager.beginTransaction()
-                            .replace(R.id.mainFragmentContainerView, Page1Fragment.getInstance())
-                            .addToBackStack(LoginFragment.NAME)
-                            .commit()
+                        launchFragment(Page1Fragment.getInstance())
                     }
                 }
             } else {
@@ -84,11 +81,15 @@ class SignInPageFragment : Fragment() {
 
     private fun loginSetOnClickListener() {
         binding.singInLoginTextView.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.mainFragmentContainerView, LoginFragment.getInstance())
-                .addToBackStack(LoginFragment.NAME)
-                .commit()
+            launchFragment(LoginFragment.getInstance())
         }
+    }
+
+    private fun launchFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.mainFragmentContainerView, fragment)
+            .addToBackStack(LoginFragment.NAME)
+            .commit()
     }
 
 }
