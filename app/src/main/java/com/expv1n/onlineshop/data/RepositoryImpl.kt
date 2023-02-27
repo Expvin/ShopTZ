@@ -3,7 +3,6 @@ package com.expv1n.onlineshop.data
 import android.app.Application
 import android.util.Log
 import com.expv1n.onlineshop.data.database.AppDatabase
-import com.expv1n.onlineshop.data.database.UserEntity
 import com.expv1n.onlineshop.data.mapper.Mapper
 import com.expv1n.onlineshop.data.newtwork.ApiFactory
 import com.expv1n.onlineshop.domain.models.FlashSale
@@ -29,12 +28,25 @@ class RepositoryImpl(application: Application): Repository {
         databaseDao.addUser(mapper.modelToEntity(user))
     }
 
-    override suspend fun getUser(userEmail: String): Boolean {
-        if (databaseDao.exists(userEmail)) {
+    override suspend fun getPresenceOfUserByEmail(userEmail: String): Boolean {
+        if (databaseDao.existsEmail(userEmail)) {
                Log.d("Repository", "return true")
                return true
         }
         Log.d("Repository", "return false")
         return false
+    }
+
+    override suspend fun getPresenceOfUserByFirstName(firstName: String): Boolean {
+        if (databaseDao.existsEmail(firstName)) {
+            Log.d("Repository", "return true")
+            return true
+        }
+        Log.d("Repository", "return false")
+        return false
+    }
+
+    override suspend fun getUser(fistName: String): User {
+        return mapper.entityToModel(databaseDao.getUser(fistName))
     }
 }

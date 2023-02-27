@@ -12,8 +12,10 @@ interface Repository {
 
     suspend fun addUser(user: User)
 
-    suspend fun getUser(userEmail: String): Boolean
+    suspend fun getPresenceOfUserByEmail(userEmail: String): Boolean
 
+    suspend fun getPresenceOfUserByFirstName(firstName: String): Boolean
 
+    suspend fun getUser(fistName: String): User
 
 }
