@@ -58,13 +58,12 @@ class LoginFragment : Fragment() {
                     binding.welcomePasswordEditText.text.toString())
                     viewModel.userLiveData.observe(requireActivity()) {
                         if (it == true) {
-                            launchFragment(Page1Fragment.getInstance())
+                            launchFragment(Page1Fragment.getInstance(), Page1Fragment.NAME)
                         } else {
                             Toast.makeText(requireActivity(), "Wrong password", Toast.LENGTH_SHORT).show()
                         }
                     }
                 } else {
-                    Toast.makeText(requireActivity(), "false", Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -76,18 +75,17 @@ class LoginFragment : Fragment() {
             if (isVisible) {
                 binding.welcomePasswordEditText.transformationMethod = HideReturnsTransformationMethod.getInstance()
                 isVisible = false
-                Toast.makeText(requireActivity(), "IF", Toast.LENGTH_SHORT).show()
             } else {
                 binding.welcomePasswordEditText.transformationMethod = PasswordTransformationMethod.getInstance()
                 isVisible = true
-                Toast.makeText(requireActivity(), "ELSE", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun launchFragment(fragment: Fragment) {
+    private fun launchFragment(fragment: Fragment, fragmentName: String) {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.mainFragmentContainerView, fragment)
+            .addToBackStack(fragmentName)
             .commit()
     }
 

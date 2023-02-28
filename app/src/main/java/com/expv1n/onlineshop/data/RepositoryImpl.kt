@@ -1,7 +1,6 @@
 package com.expv1n.onlineshop.data
 
 import android.app.Application
-import android.util.Log
 import com.expv1n.onlineshop.data.database.AppDatabase
 import com.expv1n.onlineshop.data.mapper.Mapper
 import com.expv1n.onlineshop.data.newtwork.ApiFactory
@@ -18,11 +17,12 @@ class RepositoryImpl(application: Application): Repository {
     private val mapper = Mapper()
 
     override suspend fun getLatest(): List<Latest> {
-        return apiService.getLatest()
+        return apiService.getLatest().latest
     }
 
     override suspend fun getFlashSale(): List<FlashSale> {
-        return apiService.getFlashSale()    }
+        return apiService.getFlashSale()
+    }
 
     override suspend fun addUser(user: User) {
         databaseDao.addUser(mapper.modelToEntity(user))
@@ -30,19 +30,15 @@ class RepositoryImpl(application: Application): Repository {
 
     override suspend fun getPresenceOfUserByEmail(userEmail: String): Boolean {
         if (databaseDao.existsEmail(userEmail)) {
-               Log.d("Repository", "return true")
                return true
         }
-        Log.d("Repository", "return false")
         return false
     }
 
     override suspend fun getPresenceOfUserByFirstName(firstName: String): Boolean {
         if (databaseDao.existsName(firstName)) {
-            Log.d("Repository", "return true")
             return true
         }
-        Log.d("Repository", "return false")
         return false
     }
 

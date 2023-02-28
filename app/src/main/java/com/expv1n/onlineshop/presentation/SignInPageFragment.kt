@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.expv1n.onlineshop.R
 import com.expv1n.onlineshop.databinding.FragmentSignInPageBinding
 import com.expv1n.onlineshop.domain.models.User
+import com.expv1n.onlineshop.presentation.utils.SafeClickListener
 import com.expv1n.onlineshop.presentation.viewmodel.SingInPageFragmentViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -46,7 +47,7 @@ class SignInPageFragment : Fragment() {
 
 
     private fun singInUser() {
-        binding.singInButton.setOnClickListener {
+        binding.singInButton.setSafeOnClickListener {
             if (binding.singInEmailEditText.text.toString().isEmailValid()) {
                 coroutineScope.launch {
                     viewModel.availabilityCheckUser(binding.singInEmailEditText.text.toString())
@@ -55,7 +56,6 @@ class SignInPageFragment : Fragment() {
                     if (it == true) {
                         Toast.makeText(requireActivity(), "Such user already exists " , Toast.LENGTH_LONG).show()
                     } else if (it == false) {
-                        Toast.makeText(requireActivity(), "Add user", Toast.LENGTH_LONG).show()
                         coroutineScope.launch {
                             viewModel.createUser(User(0,
                                 first_name = binding.singInFirstNameEditText.text.toString(),
@@ -63,7 +63,7 @@ class SignInPageFragment : Fragment() {
                                 email = binding.singInEmailEditText.text.toString(),
                                 password = "1234"))
                         }
-                        launchFragment(Page1Fragment.getInstance())
+                        launchFragment(Page1Fragment.getInstance(), Page1Fragment.NAME)
                     }
                 }
             } else {
@@ -79,15 +79,25 @@ class SignInPageFragment : Fragment() {
             .matches()
     }
 
-    private fun loginSetOnClickListener() {
-        binding.singInLoginTextView.setOnClickListener {
-            launchFragment(LoginFragment.getInstance())
+    fun View.setSafeOnClickListener(onSafeClick: (View) -> Unit) {
+        val safeClickListener = SafeClickListener {
+            onSafeClick(it)
         }
+        setOnClickListener(safeClickListener)
     }
 
-    private fun launchFragment(fragment: Fragment) {
+    private fun loginSetOnClickListener() {
+        binding.singInLoginTextView.setSafeOnClickListener {
+            launchFragment(LoginFragment.getInstance(), LoginFragment.NAME)
+
+        }
+
+    }
+
+    private fun launchFragment(fragment: Fragment, fragmentName: String) {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.mainFragmentContainerView, fragment)
+            .addToBackStack(fragmentName)
             .commit()
     }
 
