@@ -21,7 +21,7 @@ class RepositoryImpl(application: Application): Repository {
     }
 
     override suspend fun getFlashSale(): List<FlashSale> {
-        return apiService.getFlashSale()
+        return apiService.getFlashSale().flash_sale
     }
 
     override suspend fun addUser(user: User) {

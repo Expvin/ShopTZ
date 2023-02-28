@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.expv1n.onlineshop.R
 import com.expv1n.onlineshop.databinding.FragmentPage1Binding
+import com.expv1n.onlineshop.presentation.adapter.FlashSaleAdapter
 import com.expv1n.onlineshop.presentation.adapter.LatestAdapter
 import com.expv1n.onlineshop.presentation.viewmodel.Page1FragmentViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -20,7 +21,8 @@ class Page1Fragment : Fragment() {
     private var _binding: FragmentPage1Binding? = null
     private val binding: FragmentPage1Binding
         get() = _binding ?: throw RuntimeException("Unknown binding")
-    private lateinit var adapter: LatestAdapter
+    private lateinit var latestAdapter: LatestAdapter
+    private lateinit var flashSaleAdapter: FlashSaleAdapter
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
     private val viewModel by lazy {
         ViewModelProvider(this)[Page1FragmentViewModel::class.java]
@@ -38,9 +40,13 @@ class Page1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupAdapters()
         coroutineScope.launch {
-            viewModel.getNews()
+            viewModel.getLatest()
+            viewModel.getFlashSale()
             viewModel.latestLiveDate.observe(requireActivity()) {
-                adapter.submitList(it)
+                latestAdapter.submitList(it)
+            }
+            viewModel.flashSaleLiveDate.observe(requireActivity()) {
+                flashSaleAdapter.submitList(it)
             }
         }
     }
@@ -65,11 +71,14 @@ class Page1Fragment : Fragment() {
     }
 
     private fun setupAdapters() {
-        adapter = LatestAdapter()
-        binding.page1LatestRecyclerView.adapter = adapter
+        latestAdapter = LatestAdapter()
+        binding.page1LatestRecyclerView.adapter = latestAdapter
         binding.page1LatestRecyclerView.layoutManager = LinearLayoutManager(requireActivity(),
             LinearLayoutManager.HORIZONTAL, false)
-
+        flashSaleAdapter = FlashSaleAdapter()
+        binding.page1FlashSaleRecyclerView.adapter = flashSaleAdapter
+        binding.page1FlashSaleRecyclerView.layoutManager = LinearLayoutManager(requireActivity(),
+            LinearLayoutManager.HORIZONTAL, false)
     }
 
     companion object {
