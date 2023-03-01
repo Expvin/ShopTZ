@@ -31,11 +31,10 @@ class Page1FragmentViewModel(application: Application): AndroidViewModel(applica
 
 
     suspend fun getData() {
-
         val job = viewModelScope.launch {
             val deferredLatest = viewModelScope.async { getLatest.getLatest() }
             val deferredFlashSale = viewModelScope.async {
-                delay(5000)
+                delay(1000)
                 getFlashSale.getFlashSale() }
             _latestLiveDate.value = deferredLatest.await()
             _flashSaleLiveDate.value = deferredFlashSale.await()

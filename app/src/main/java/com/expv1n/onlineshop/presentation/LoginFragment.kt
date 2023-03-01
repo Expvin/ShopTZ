@@ -28,6 +28,11 @@ class LoginFragment : Fragment() {
         ViewModelProvider(this)[LoginFragmentViewModel::class.java]
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as? MainActivity)?.hideBottomNavigationView()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

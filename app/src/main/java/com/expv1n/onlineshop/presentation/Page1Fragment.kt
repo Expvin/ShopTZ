@@ -36,6 +36,11 @@ class Page1Fragment : Fragment() {
         return binding.root
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as? MainActivity)?.showBottomNavigationView()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupAdapters()
@@ -77,6 +82,9 @@ class Page1Fragment : Fragment() {
         flashSaleAdapter = FlashSaleAdapter()
         binding.page1FlashSaleRecyclerView.adapter = flashSaleAdapter
         binding.page1FlashSaleRecyclerView.layoutManager = LinearLayoutManager(requireActivity(),
+            LinearLayoutManager.HORIZONTAL, false)
+        binding.page1BrandsRecyclerView.adapter = latestAdapter
+        binding.page1BrandsRecyclerView.layoutManager = LinearLayoutManager(requireActivity(),
             LinearLayoutManager.HORIZONTAL, false)
     }
 

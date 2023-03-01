@@ -40,6 +40,12 @@ class SignInPageFragment : Fragment() {
         return binding.root
     }
 
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        (activity as? MainActivity)?.hideBottomNavigationView()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
@@ -99,6 +105,14 @@ class SignInPageFragment : Fragment() {
             .replace(R.id.mainFragmentContainerView, fragment)
             .addToBackStack(fragmentName)
             .commit()
+    }
+
+    companion object {
+
+        const val NAME = "SignInPageFragment"
+
+        fun getInstance() = SignInPageFragment()
+
     }
 
 }
