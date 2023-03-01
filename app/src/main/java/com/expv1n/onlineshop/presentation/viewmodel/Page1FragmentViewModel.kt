@@ -10,6 +10,7 @@ import com.expv1n.onlineshop.domain.models.FlashSale
 import com.expv1n.onlineshop.domain.models.Latest
 import com.expv1n.onlineshop.domain.usecases.GetFlashSaleUseCase
 import com.expv1n.onlineshop.domain.usecases.GetLatestUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -30,16 +31,15 @@ class Page1FragmentViewModel(application: Application): AndroidViewModel(applica
 
 
     suspend fun getData() {
-        val latest = viewModelScope.async {
-            getLatest.getLatest()
+
+        val job = viewModelScope.launch {
+            val deferredLatest = viewModelScope.async { getLatest.getLatest() }
+            val deferredFlashSale = viewModelScope.async {
+                delay(5000)
+                getFlashSale.getFlashSale() }
+            _latestLiveDate.value = deferredLatest.await()
+            _flashSaleLiveDate.value = deferredFlashSale.await()
         }
-        val flashSale = viewModelScope.async {
-            delay(5000)
-            getFlashSale.getFlashSale()
-        }
-        viewModelScope.launch {
-            _latestLiveDate.value = latest.await()
-            _flashSaleLiveDate.value = flashSale.await()
-        }
+        job.join()
     }
 }
