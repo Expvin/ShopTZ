@@ -40,8 +40,7 @@ class Page1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupAdapters()
         coroutineScope.launch {
-            viewModel.getLatest()
-            viewModel.getFlashSale()
+            viewModel.getData()
             viewModel.latestLiveDate.observe(requireActivity()) {
                 latestAdapter.submitList(it)
             }

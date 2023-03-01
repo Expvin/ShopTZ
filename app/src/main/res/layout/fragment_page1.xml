@@ -94,11 +94,10 @@
             android:layout_marginTop="6dp"
             android:backgroundTint="@color/white"/>
 
-        <LinearLayout
+        <HorizontalScrollView
             android:id="@+id/page1BarLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/page1WhatLookingEditText"
@@ -107,217 +106,232 @@
             android:layout_marginTop="10dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight = "1">
-                <FrameLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center">
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/page1WhatLookingEditText"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp">
 
-                    <ImageView
-                        android:id="@+id/elipse"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ellipse" />
-
-                    <ImageView
-                        android:id="@+id/page1Phone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/phone" />
-                </FrameLayout>
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/phones"
-                    android:textColor="#A6A7AB"
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
+                    android:orientation="vertical"
+                    android:layout_weight = "1">
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/elipse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse" />
+
+                        <ImageView
+                            android:id="@+id/page1Phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/phone" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phones"
+                        android:textColor="#A6A7AB"
+                        android:fontFamily="@font/poppins_light"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight = "1">
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/elipse2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse" />
+
+                        <ImageView
+                            android:id="@+id/page1Headphones"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/headphones" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/headphones"
+                        android:textColor="#A6A7AB"
+                        android:fontFamily="@font/poppins_light"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight = "1">
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/elipse3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse" />
+
+                        <ImageView
+                            android:id="@+id/page1Games"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/games" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Games"
+                        android:textColor="#A6A7AB"
+                        android:fontFamily="@font/poppins_light"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight = "1">
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/elipse4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse" />
+
+                        <ImageView
+                            android:id="@+id/page1Cars"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/car" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cars"
+                        android:textColor="#A6A7AB"
+                        android:fontFamily="@font/poppins_light"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight = "1">
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/elipse5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse" />
+
+                        <ImageView
+                            android:id="@+id/page1Furniture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/furniture" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/furniture"
+                        android:textColor="#A6A7AB"
+                        android:fontFamily="@font/poppins_light"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight = "1">
+                    <FrameLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/elipse6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ellipse" />
+
+                        <ImageView
+                            android:id="@+id/page1Kids"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/kids" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kids"
+                        android:textColor="#A6A7AB"
+                        android:fontFamily="@font/poppins_light"
+                        android:layout_marginTop="10dp"
+                        />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight = "1">
-                <FrameLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center">
+        </HorizontalScrollView>
 
-                    <ImageView
-                        android:id="@+id/elipse2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ellipse" />
 
-                    <ImageView
-                        android:id="@+id/page1Headphones"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/headphones" />
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/headphones"
-                    android:textColor="#A6A7AB"
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight = "1">
-                <FrameLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:id="@+id/elipse3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ellipse" />
-
-                    <ImageView
-                        android:id="@+id/page1Games"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/games" />
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Games"
-                    android:textColor="#A6A7AB"
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight = "1">
-                <FrameLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:id="@+id/elipse4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ellipse" />
-
-                    <ImageView
-                        android:id="@+id/page1Cars"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/car" />
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cars"
-                    android:textColor="#A6A7AB"
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight = "1">
-                <FrameLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:id="@+id/elipse5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ellipse" />
-
-                    <ImageView
-                        android:id="@+id/page1Furniture"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/furniture" />
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/furniture"
-                    android:textColor="#A6A7AB"
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight = "1">
-                <FrameLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:id="@+id/elipse6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ellipse" />
-
-                    <ImageView
-                        android:id="@+id/page1Kids"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@drawable/kids" />
-                </FrameLayout>
-
-                <TextView
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/kids"
-                    android:textColor="#A6A7AB"
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_marginTop="10dp"
-                    />
-
-            </LinearLayout>
-
-        </LinearLayout>
 
         <EditText
             android:id="@+id/page1WhatLookingEditText"
