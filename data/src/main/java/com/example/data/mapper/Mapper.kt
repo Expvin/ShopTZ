@@ -2,8 +2,9 @@ package com.example.data.mapper
 
 import com.example.data.database.UserEntity
 import com.example.domain.models.User
+import javax.inject.Inject
 
-class Mapper {
+class Mapper @Inject constructor(){
 
     fun modelToEntity(user: User) = UserEntity (
         id = 0,

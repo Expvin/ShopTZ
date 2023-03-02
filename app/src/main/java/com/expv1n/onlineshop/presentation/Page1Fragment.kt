@@ -1,5 +1,6 @@
 package com.expv1n.onlineshop.presentation
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,13 +9,17 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.expv1n.onlineshop.R
+import com.expv1n.onlineshop.ShopApplication
 import com.expv1n.onlineshop.databinding.FragmentPage1Binding
 import com.expv1n.onlineshop.presentation.adapter.FlashSaleAdapter
 import com.expv1n.onlineshop.presentation.adapter.LatestAdapter
+import com.expv1n.onlineshop.presentation.viewmodel.LoginFragmentViewModel
 import com.expv1n.onlineshop.presentation.viewmodel.Page1FragmentViewModel
+import com.expv1n.onlineshop.presentation.viewmodel.ViewModelFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class Page1Fragment : Fragment() {
 
@@ -24,9 +29,18 @@ class Page1Fragment : Fragment() {
     private lateinit var latestAdapter: LatestAdapter
     private lateinit var flashSaleAdapter: FlashSaleAdapter
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
-    private val viewModel by lazy {
-        ViewModelProvider(this)[Page1FragmentViewModel::class.java]
+    private lateinit var viewModel: Page1FragmentViewModel
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+    private val component by lazy {
+        (requireActivity().application as ShopApplication).component
     }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        component.inject(this)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +50,7 @@ class Page1Fragment : Fragment() {
         return binding.root
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         (activity as? MainActivity)?.showBottomNavigationView()
@@ -43,6 +58,7 @@ class Page1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this, viewModelFactory)[Page1FragmentViewModel::class.java]
         setupAdapters()
         coroutineScope.launch {
             viewModel.getData()

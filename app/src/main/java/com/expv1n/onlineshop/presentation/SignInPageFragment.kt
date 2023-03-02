@@ -1,5 +1,6 @@
 package com.expv1n.onlineshop.presentation
 
+import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
@@ -11,11 +12,15 @@ import androidx.lifecycle.ViewModelProvider
 import com.expv1n.onlineshop.R
 import com.expv1n.onlineshop.databinding.FragmentSignInPageBinding
 import com.example.domain.models.User
+import com.expv1n.onlineshop.ShopApplication
 import com.expv1n.onlineshop.presentation.utils.SafeClickListener
+import com.expv1n.onlineshop.presentation.viewmodel.LoginFragmentViewModel
 import com.expv1n.onlineshop.presentation.viewmodel.SingInPageFragmentViewModel
+import com.expv1n.onlineshop.presentation.viewmodel.ViewModelFactory
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
 class SignInPageFragment : Fragment() {
@@ -24,10 +29,19 @@ class SignInPageFragment : Fragment() {
     private val binding: FragmentSignInPageBinding
         get() = _binding ?: throw RuntimeException("Unknown binding")
 
+
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
-    private val viewModel by lazy {
-        ViewModelProvider(this)[SingInPageFragmentViewModel::class.java]
+    private lateinit var viewModel: SingInPageFragmentViewModel
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+    private val component by lazy {
+        (requireActivity().application as ShopApplication).component
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        component.inject(this)
     }
 
     override fun onCreateView(
@@ -40,6 +54,10 @@ class SignInPageFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this, viewModelFactory)[SingInPageFragmentViewModel::class.java]
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

@@ -2,19 +2,23 @@ package com.example.data
 
 import android.app.Application
 import com.example.data.database.AppDatabase
+import com.example.data.database.UserDao
 import com.example.data.mapper.Mapper
 import com.example.data.newtwork.ApiFactory
+import com.example.data.newtwork.ApiService
 import com.example.domain.models.FlashSale
 import com.example.domain.models.Latest
 import com.example.domain.models.User
 import com.example.domain.repository.Repository
+import javax.inject.Inject
 
-class RepositoryImpl(application: Application): Repository {
+class RepositoryImpl @Inject constructor(
+    application: Application,
+    private val databaseDao: UserDao,
+    private val apiService: ApiService,
+    private val mapper: Mapper
+    ): Repository {
 
-    private val databaseDao = AppDatabase.getInstance(application).getUserDao()
-    private val apiFactory = ApiFactory()
-    private val apiService = apiFactory.apiService
-    private val mapper = Mapper()
 
     override suspend fun getLatest(): List<Latest> {
         return apiService.getLatest().latest

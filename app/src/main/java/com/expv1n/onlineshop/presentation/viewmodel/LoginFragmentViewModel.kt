@@ -1,23 +1,23 @@
 package com.expv1n.onlineshop.presentation.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.data.RepositoryImpl
+import androidx.lifecycle.ViewModel
 import com.example.domain.models.User
 import com.example.domain.usecases.GetPresenceOfUserByFirstNameUseCase
 import com.example.domain.usecases.GetUserUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginFragmentViewModel(application: Application): AndroidViewModel(application) {
+class LoginFragmentViewModel @Inject constructor(
+    private val getUser: GetUserUseCase,
+    private val getPresenceOfUserByFirstNameUseCase:
+    GetPresenceOfUserByFirstNameUseCase
+) : ViewModel() {
 
-    private val repository = RepositoryImpl(application)
-    private val getUser = GetUserUseCase(repository)
-    private val getPresenceOfUserByFirstNameUseCase =
-        GetPresenceOfUserByFirstNameUseCase(repository)
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
@@ -29,7 +29,7 @@ class LoginFragmentViewModel(application: Application): AndroidViewModel(applica
     val checkUserLiveData: LiveData<Boolean>
         get() = _checkUserLiveData
 
-    fun checkUser(firstName: String, password:String) {
+    fun checkUser(firstName: String, password: String) {
         coroutineScope.launch {
             val user: User = getUser.getUser(firstName)
             if (user.first_name == (firstName) && user.password == (password)) {
@@ -43,8 +43,10 @@ class LoginFragmentViewModel(application: Application): AndroidViewModel(applica
 
     fun checkAvailability(firstName: String) {
         coroutineScope.launch {
-            _checkUserLiveData.postValue(getPresenceOfUserByFirstNameUseCase
-                .getUserByFirstName(firstName))
+            _checkUserLiveData.postValue(
+                getPresenceOfUserByFirstNameUseCase
+                    .getUserByFirstName(firstName)
+            )
         }
     }
 
