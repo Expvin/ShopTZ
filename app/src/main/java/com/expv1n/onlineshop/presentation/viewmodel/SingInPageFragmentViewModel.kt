@@ -4,10 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.expv1n.onlineshop.data.RepositoryImpl
-import com.expv1n.onlineshop.domain.models.User
-import com.expv1n.onlineshop.domain.usecases.AddUserUseCase
-import com.expv1n.onlineshop.domain.usecases.GetPresenceOfUserByEmailUseCase
+import com.example.data.RepositoryImpl
+import com.example.domain.models.User
+import com.example.domain.usecases.AddUserUseCase
+import com.example.domain.usecases.GetPresenceOfUserByEmailUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

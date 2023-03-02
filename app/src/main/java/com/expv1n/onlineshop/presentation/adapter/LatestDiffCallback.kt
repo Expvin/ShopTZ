@@ -1,15 +1,15 @@
 package com.expv1n.onlineshop.presentation.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.expv1n.onlineshop.domain.models.Latest
+import com.example.domain.models.Latest
 
-class LatestDiffCallback: DiffUtil.ItemCallback<Latest>() {
+class LatestDiffCallback: DiffUtil.ItemCallback<com.example.domain.models.Latest>() {
 
-    override fun areItemsTheSame(oldItem: Latest, newItem: Latest): Boolean {
+    override fun areItemsTheSame(oldItem: com.example.domain.models.Latest, newItem: com.example.domain.models.Latest): Boolean {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: Latest, newItem: Latest): Boolean {
+    override fun areContentsTheSame(oldItem: com.example.domain.models.Latest, newItem: com.example.domain.models.Latest): Boolean {
         return oldItem == newItem
     }
 }

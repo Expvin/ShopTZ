@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.expv1n.onlineshop.databinding.LatestItemBinding
-import com.expv1n.onlineshop.domain.models.Latest
+import com.example.domain.models.Latest
 
-class LatestAdapter: ListAdapter<Latest, LatestAdapter.LatestViewHolder>(LatestDiffCallback()) {
+class LatestAdapter: ListAdapter<com.example.domain.models.Latest, LatestAdapter.LatestViewHolder>(LatestDiffCallback()) {
 
     class LatestViewHolder(val binding: LatestItemBinding): RecyclerView.ViewHolder(binding.root) {
 

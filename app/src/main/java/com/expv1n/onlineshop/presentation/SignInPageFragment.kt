@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.expv1n.onlineshop.R
 import com.expv1n.onlineshop.databinding.FragmentSignInPageBinding
-import com.expv1n.onlineshop.domain.models.User
+import com.example.domain.models.User
 import com.expv1n.onlineshop.presentation.utils.SafeClickListener
 import com.expv1n.onlineshop.presentation.viewmodel.SingInPageFragmentViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -63,11 +63,15 @@ class SignInPageFragment : Fragment() {
                         Toast.makeText(requireActivity(), "Such user already exists " , Toast.LENGTH_LONG).show()
                     } else if (it == false) {
                         coroutineScope.launch {
-                            viewModel.createUser(User(0,
-                                first_name = binding.singInFirstNameEditText.text.toString(),
-                                last_name = binding.singInLastNameEditText.text.toString(),
-                                email = binding.singInEmailEditText.text.toString(),
-                                password = "1234"))
+                            viewModel.createUser(
+                                com.example.domain.models.User(
+                                    0,
+                                    first_name = binding.singInFirstNameEditText.text.toString(),
+                                    last_name = binding.singInLastNameEditText.text.toString(),
+                                    email = binding.singInEmailEditText.text.toString(),
+                                    password = "1234"
+                                )
+                            )
                         }
                         launchFragment(Page1Fragment.getInstance(), Page1Fragment.NAME)
                     }

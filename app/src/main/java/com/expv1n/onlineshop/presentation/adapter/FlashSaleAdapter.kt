@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.expv1n.onlineshop.databinding.FlashSaleItemBinding
-import com.expv1n.onlineshop.domain.models.FlashSale
+import com.example.domain.models.FlashSale
 
 
-class FlashSaleAdapter: ListAdapter<FlashSale, FlashSaleAdapter.FlashSaleViewHolder>
+class FlashSaleAdapter: ListAdapter<com.example.domain.models.FlashSale, FlashSaleAdapter.FlashSaleViewHolder>
     (FlashSaleDiffCallback()) {
 
     class FlashSaleViewHolder(val binding: FlashSaleItemBinding):

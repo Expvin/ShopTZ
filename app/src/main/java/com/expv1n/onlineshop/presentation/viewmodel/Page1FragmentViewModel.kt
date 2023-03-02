@@ -5,12 +5,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.expv1n.onlineshop.data.RepositoryImpl
-import com.expv1n.onlineshop.domain.models.FlashSale
-import com.expv1n.onlineshop.domain.models.Latest
-import com.expv1n.onlineshop.domain.usecases.GetFlashSaleUseCase
-import com.expv1n.onlineshop.domain.usecases.GetLatestUseCase
-import kotlinx.coroutines.Dispatchers
+import com.example.data.RepositoryImpl
+import com.example.domain.models.FlashSale
+import com.example.domain.models.Latest
+import com.example.domain.usecases.GetFlashSaleUseCase
+import com.example.domain.usecases.GetLatestUseCase
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
