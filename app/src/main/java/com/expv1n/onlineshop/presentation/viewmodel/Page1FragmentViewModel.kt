@@ -6,10 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.models.FlashSale
-import com.example.domain.models.Latest
-import com.example.domain.usecases.GetFlashSaleUseCase
-import com.example.domain.usecases.GetLatestUseCase
+import com.expv1n.domain.models.FlashSale
+import com.expv1n.domain.models.Latest
+import com.expv1n.domain.usecases.GetFlashSaleUseCase
+import com.expv1n.domain.usecases.GetLatestUseCase
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

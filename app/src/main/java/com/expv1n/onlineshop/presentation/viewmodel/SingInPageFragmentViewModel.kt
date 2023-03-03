@@ -3,9 +3,9 @@ package com.expv1n.onlineshop.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.domain.models.User
-import com.example.domain.usecases.AddUserUseCase
-import com.example.domain.usecases.GetPresenceOfUserByEmailUseCase
+import com.expv1n.domain.models.User
+import com.expv1n.domain.usecases.AddUserUseCase
+import com.expv1n.domain.usecases.GetPresenceOfUserByEmailUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

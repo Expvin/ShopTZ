@@ -2,11 +2,11 @@ package com.expv1n.onlineshop.di
 
 import android.app.Application
 import com.example.data.RepositoryImpl
-import com.example.data.database.AppDatabase
-import com.example.data.database.UserDao
 import com.example.data.newtwork.ApiFactory
 import com.example.data.newtwork.ApiService
-import com.example.domain.repository.Repository
+import com.expv1n.data.database.AppDatabase
+import com.expv1n.data.database.UserDao
+import com.expv1n.domain.repository.Repository
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

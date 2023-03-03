@@ -4,9 +4,9 @@ package com.expv1n.onlineshop.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.domain.models.User
-import com.example.domain.usecases.GetPresenceOfUserByFirstNameUseCase
-import com.example.domain.usecases.GetUserUseCase
+import com.expv1n.domain.models.User
+import com.expv1n.domain.usecases.GetPresenceOfUserByFirstNameUseCase
+import com.expv1n.domain.usecases.GetUserUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

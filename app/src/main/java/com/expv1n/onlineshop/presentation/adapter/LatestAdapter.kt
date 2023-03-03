@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.expv1n.domain.models.Latest
 import com.expv1n.onlineshop.databinding.LatestItemBinding
-import com.example.domain.models.Latest
 
-class LatestAdapter: ListAdapter<com.example.domain.models.Latest, LatestAdapter.LatestViewHolder>(LatestDiffCallback()) {
+class LatestAdapter: ListAdapter<Latest, LatestAdapter.LatestViewHolder>(LatestDiffCallback()) {
 
     class LatestViewHolder(val binding: LatestItemBinding): RecyclerView.ViewHolder(binding.root) {
 

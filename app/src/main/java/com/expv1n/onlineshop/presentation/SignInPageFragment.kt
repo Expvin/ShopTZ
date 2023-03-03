@@ -9,12 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.expv1n.domain.models.User
 import com.expv1n.onlineshop.R
 import com.expv1n.onlineshop.databinding.FragmentSignInPageBinding
-import com.example.domain.models.User
 import com.expv1n.onlineshop.ShopApplication
 import com.expv1n.onlineshop.presentation.utils.SafeClickListener
-import com.expv1n.onlineshop.presentation.viewmodel.LoginFragmentViewModel
 import com.expv1n.onlineshop.presentation.viewmodel.SingInPageFragmentViewModel
 import com.expv1n.onlineshop.presentation.viewmodel.ViewModelFactory
 import kotlinx.coroutines.CoroutineScope
@@ -82,7 +81,7 @@ class SignInPageFragment : Fragment() {
                     } else if (it == false) {
                         coroutineScope.launch {
                             viewModel.createUser(
-                                com.example.domain.models.User(
+                                User(
                                     0,
                                     first_name = binding.singInFirstNameEditText.text.toString(),
                                     last_name = binding.singInLastNameEditText.text.toString(),
