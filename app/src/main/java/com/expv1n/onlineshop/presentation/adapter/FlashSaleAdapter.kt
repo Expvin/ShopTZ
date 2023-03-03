@@ -31,7 +31,7 @@ class FlashSaleAdapter: ListAdapter<FlashSale, FlashSaleAdapter.FlashSaleViewHol
         holder.binding.itemRectanglesTextView.text = flashSale.category
         holder.binding.itemNameTextView.text = flashSale.name
         holder.binding.itemPriceTextView.text = flashSale.price.toString()
-        holder.binding.itemSaleTextView.text = flashSale.discount.toString()
+        holder.binding.itemSaleTextView.text = flashSale.discount.toString() + "% off"
     }
 
 }

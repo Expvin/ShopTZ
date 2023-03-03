@@ -1,142 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="221dp"
-    android:layout_height="174dp"
+    android:layout_width="230dp"
+    android:layout_height="180dp"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="9dp"
+    android:layout_marginStart="9dp"
     android:elevation="6dp">
 
-    <ImageView
-        android:id="@+id/itemLatestImageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:src="@drawable/latest_tools_image"
-        android:scaleType="centerInside"/>
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:layout_marginStart="14dp">
+       <ImageView
+           android:id="@+id/itemLatestImageView"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           tools:src="@drawable/latest_tools_image"
+           android:scaleType="centerCrop"/>
 
-        <ImageView
-            android:id="@+id/rectangles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rectangle" />
+       <FrameLayout
+           android:id="@+id/fl1"
+           android:layout_width="50dp"
+           android:layout_height="20dp"
+           android:layout_marginTop="92dp"
+           android:layout_marginStart="14dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/itemRectanglesTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="@string/phones"
-            android:textSize="6sp"
-            android:fontFamily="@font/poppins_light"
-            android:textColor="#070604"
-            android:layout_gravity="center"/>
+           <ImageView
+               android:id="@+id/rectangles"
+               android:layout_width="50dp"
+               android:layout_height="20dp"
+               android:src="@drawable/rectangle" />
 
-    </FrameLayout>
+           <TextView
+               android:id="@+id/itemRectanglesTextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               tools:text="@string/phones"
+               android:textSize="9sp"
+               android:fontFamily="@font/poppins_light"
+               android:textColor="#070604"
+               android:layout_gravity="center"/>
 
-    <FrameLayout
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginStart="155dp"
-        >
+       </FrameLayout>
 
-        <ImageView
-            android:id="@+id/elipse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ellipse" />
+       <FrameLayout
+           android:id="@+id/fl2"
+           android:layout_width="35dp"
+           android:layout_height="35dp"
+           android:layout_marginTop="124dp"
+           android:layout_marginEnd="4dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/plus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/plus" />
+           <ImageView
+               android:id="@+id/elipse"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ellipse" />
 
-    </FrameLayout>
+           <ImageView
+               android:id="@+id/plus"
+               android:layout_width="18dp"
+               android:layout_height="18dp"
+               android:layout_gravity="center"
+               android:src="@drawable/plus" />
 
-    <FrameLayout
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginStart="120dp"
-        >
+       </FrameLayout>
 
-        <ImageView
-            android:id="@+id/elipse2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ellipse" />
+       <FrameLayout
+           android:layout_width="28dp"
+           android:layout_height="28dp"
+           android:layout_marginTop="128dp"
+           android:layout_marginEnd="5dp"
+           app:layout_constraintEnd_toStartOf="@id/fl2"
+           app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/favorite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/favorite" />
+           <ImageView
+               android:id="@+id/elipse2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ellipse" />
 
-    </FrameLayout>
+           <ImageView
+               android:id="@+id/favorite"
+               android:layout_width="10dp"
+               android:layout_height="10dp"
+               android:layout_gravity="center"
+               android:src="@drawable/favorite" />
 
-    <TextView
-        android:id="@+id/itemNameTextView"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        tools:text="Samsung S10"
-        android:fontFamily="@font/poppins_light"
-        android:textColor="@color/white"
-        android:layout_marginStart="5dp"
-        android:textStyle="bold"
-        android:textSize="10sp"
-        android:layout_marginTop="106dp"/>
+       </FrameLayout>
 
-    <TextView
-        android:id="@+id/itemPriceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="$ 180,000"
-        android:fontFamily="@font/poppins_light"
-        android:textColor="@color/white"
-        android:layout_marginStart="5dp"
-        android:textStyle="bold"
-        android:textSize="7sp"
-        android:layout_marginTop="133dp"/>
+       <TextView
+           android:id="@+id/itemNameTextView"
+           android:layout_width="90dp"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/fl1"
+           tools:text="Samsung S10"
+           android:fontFamily="@font/poppins_light"
+           android:textColor="@color/white"
+           android:layout_marginStart="5dp"
+           android:textStyle="bold"
+           android:textSize="13sp"
+           android:layout_marginTop="6dp"/>
 
-    <FrameLayout
-        android:layout_width="41dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="128dp">
+       <TextView
+           android:id="@+id/itemPriceTextView"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/itemNameTextView"
+           tools:text="$ 180,000"
+           android:fontFamily="@font/poppins_light"
+           android:textColor="@color/white"
+           android:layout_marginStart="5dp"
+           android:textStyle="bold"
+           android:textSize="10sp"
+           android:layout_marginTop="6dp"/>
 
-        <ImageView
-            android:id="@+id/red_rectangles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/red_rectangle" />
+       <FrameLayout
+           android:layout_width="50dp"
+           android:layout_height="20dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginStart="128dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/itemSaleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="30% off "
-            android:textSize="6sp"
-            android:fontFamily="@font/poppins_light"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+           <ImageView
+               android:id="@+id/red_rectangles"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/red_rectangle" />
 
-    </FrameLayout>
+           <TextView
+               android:id="@+id/itemSaleTextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               tools:text="30% off "
+               android:textSize="10sp"
+               android:fontFamily="@font/poppins_light"
+               android:textColor="@color/white"
+               android:textStyle="bold"
+               android:layout_gravity="center"/>
 
-    <ImageView
-        android:id="@+id/itemImageSaleImgaveView"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/image_flash_sale"/>
+       </FrameLayout>
+
+       <ImageView
+           android:id="@+id/itemImageSaleImgaveView"
+           android:layout_width="25dp"
+           android:layout_height="25dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           android:layout_marginTop="10dp"
+           android:layout_marginStart="10dp"
+           android:src="@drawable/image_flash_sale"/>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
