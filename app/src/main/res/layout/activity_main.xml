@@ -19,12 +19,14 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_menu_navigation"
-        android:visibility="gone"/>
+        android:background="@drawable/bottom_nav_background_corner"
+        android:visibility="gone"
+        app:itemBackground="@drawable/item_background_bottom_nav"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
