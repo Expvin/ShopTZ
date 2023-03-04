@@ -26,7 +26,7 @@
         app:menu="@menu/bottom_menu_navigation"
         android:background="@drawable/bottom_nav_background_corner"
         android:visibility="gone"
-        app:itemIconTint="@color/menu_no_selected_color"
+        app:itemIconTint="@drawable/selector_navbar"
         android:backgroundTint="@drawable/item_background_bottom_nav"
         app:itemHorizontalTranslationEnabled="false"
         app:labelVisibilityMode="unlabeled"/>
