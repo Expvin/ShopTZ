@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="myBlack">#161826</color>
     <color name="singInBackground">#CDCBC7</color>
+    <color name="menu_selected_color">#737297</color>
+    <color name="menu_no_selected_color">#909090</color>
 </resources>

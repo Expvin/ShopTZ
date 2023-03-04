@@ -69,15 +69,28 @@ class SignInPageFragment : Fragment() {
     }
 
 
+    private fun checkInputField() {
+        if (binding.singInFirstNameEditText.text.toString().isEmpty()) {
+            binding.singInFirstNameEditText.error =  getString(R.string.the_field_cannot_be_empty)
+        }
+        if (binding.singInLastNameEditText.text.toString().isEmpty()) {
+            binding.singInLastNameEditText.error =  getString(R.string.the_field_cannot_be_empty)
+        }
+        if (binding.singInEmailEditText.text.toString().isEmpty()) {
+            binding.singInEmailEditText.error =  getString(R.string.the_field_cannot_be_empty)
+        }
+    }
+
     private fun singInUser() {
         binding.singInButton.setSafeOnClickListener {
+            checkInputField()
             if (binding.singInEmailEditText.text.toString().isEmailValid()) {
                 coroutineScope.launch {
                     viewModel.availabilityCheckUser(binding.singInEmailEditText.text.toString())
                 }
                 viewModel.checkUserLiveData.observe(requireActivity()) {
                     if (it == true) {
-                        Toast.makeText(requireActivity(), "Such user already exists " , Toast.LENGTH_LONG).show()
+                        binding.singInFirstNameEditText.error =  getString(R.string.such_user_already_exists)
                     } else if (it == false) {
                         coroutineScope.launch {
                             viewModel.createUser(
@@ -94,7 +107,7 @@ class SignInPageFragment : Fragment() {
                     }
                 }
             } else {
-                Toast.makeText(requireActivity(), "Enter a valid email", Toast.LENGTH_LONG).show()
+                binding.singInEmailEditText.error =  getString(R.string.enter_a_valid_email)
             }
         }
     }

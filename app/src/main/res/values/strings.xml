@@ -39,4 +39,8 @@
     <string name="view_all">View all</string>
     <string name="flash_sale">Flash Sale</string>
     <string name="brands">Brands</string>
+    <string name="the_field_cannot_be_empty">the field cannot be empty!</string>
+    <string name="wrong_password">Wrong password</string>
+    <string name="such_user_already_exists">Such user already exists</string>
+    <string name="enter_a_valid_email">Enter a valid email</string>
 </resources>

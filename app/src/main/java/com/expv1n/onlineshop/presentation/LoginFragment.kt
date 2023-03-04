@@ -68,6 +68,16 @@ class LoginFragment : Fragment() {
     private fun initButton() {
         binding.logInButton.setOnClickListener {
             checkUserAvailability()
+            checkInputField()
+        }
+    }
+
+    private fun checkInputField() {
+        if (binding.welcomeFirstNameEditText.text.toString().isEmpty()) {
+            binding.welcomeFirstNameEditText.error =  getString(R.string.the_field_cannot_be_empty)
+        }
+        if (binding.welcomePasswordEditText.text.toString().isEmpty()) {
+            binding.welcomePasswordEditText.error =  getString(R.string.the_field_cannot_be_empty)
         }
     }
 
@@ -82,10 +92,9 @@ class LoginFragment : Fragment() {
                         if (it == true) {
                             launchFragment(Page1Fragment.getInstance(), Page1Fragment.NAME)
                         } else {
-                            Toast.makeText(requireActivity(), "Wrong password", Toast.LENGTH_SHORT).show()
+                            binding.welcomePasswordEditText.error = getString(R.string.wrong_password)
                         }
                     }
-                } else {
                 }
             }
         }
